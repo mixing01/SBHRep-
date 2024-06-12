@@ -47,7 +47,7 @@ public class Greedy {
             Oligonucleotide newOligo = remainingOligo.get(minIndex);
             result.append(newOligo.value.substring(probeLength - lastAddedOligo.checkOffset(newOligo)));
             if(result.length() > targetLength)
-                return result.substring(0,targetLength);
+                return result.substring(0,result.length() - probeLength);
             removeOrDecrementNucleotide(remainingOligo, minIndex);
         }
         return result.toString();
